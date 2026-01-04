@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+    <div class="header">
+        <img src="https://images.unsplash.com/photo-1535535112387-56ffe8db21ff?ixlib=rb-4.0.3" alt="Railway Train">
+        <h1>Railway Ticket Booking</h1>
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+
+        <div class="form-group">
+            <label for="name">Passenger Name</label>
+            <input type="text" id="name" placeholder="Enter Passenger name" required>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" placeholder="Enter Passenger Age" required>
+        </div>
+
+        <div class="form-group">
+            <label for="from">From Station</label>
+            <select id="from" required>
+                <option value="">Select Station</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Patna</option>
+                <option>Kolkata</option>
+                <option>Bangalore</option>
+                <option>Chennai</option>
+                <option>Hyderabad</option>
+                <option>Jaipur</option>
+                <option>Lucknow</option>
+                <option>Pune</option>
+                <option>Indore</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="to">To Station</label>
+            <select id="to" required>
+                <option value="">Select Station</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Patna</option>
+                <option>Kolkata</option>
+                <option>Bangalore</option>
+                <option>Chennai</option>
+                <option>Hyderabad</option>
+                <option>Jaipur</option>
+                <option>Lucknow</option>
+                <option>Pune</option>
+                <option>Indore</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Travel Date</label>
+            <input type="date" id="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="travelClass">Class</label>
+            <select id="travelClass" required>
+                <option value="">Select Class</option>
+                <option>First AC</option>
+                <option>Second AC</option>
+                <option>Third AC</option>
+                <option>Sleeper</option>
+                <option>Second Sitting</option>
+            </select>
+        </div>
+
+        <button type="submit">Book Ticket</button>
+    </form>
+
+    <div class="ticket" id="ticket">
+        <h3>E-Ticket</h3>
+        <div class="ticket-details" id="ticketDetails"></div>
+        <button onclick="downloadTicket()">Download Ticket</button>
+    </div>
+
+</div>
+
+<!-- ✅ ONLY ONE SCRIPT, AT THE BOTTOM -->
+<script src="script.js"></script>
+</body>
+</html>
