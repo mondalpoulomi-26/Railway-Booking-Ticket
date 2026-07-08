@@ -1,94 +1,544 @@
+/* ==============================
+   GOOGLE FONT
+============================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background-color: #d4c1dfc9;
-    padding: 20px;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    background:linear-gradient(135deg,#0f4c81,#4b79a1,#6dd5ed);
+    min-height:100vh;
+    padding:40px 15px;
 }
+
+/* ==============================
+        CONTAINER
+============================== */
+
 .container{
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: #eae4e9;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, #7e8fc9, #a180c9);
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+    background:#ffffff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 18px 40px rgba(0,0,0,.25);
+    animation:fadeIn .8s ease;
 }
-.container:hover{
-    transform: scale(1.01);
-    transition: 0.3s;
-    box-shadow: 1px 2px 2px 2px #316877;
-}
+
+/* ==============================
+        HEADER
+============================== */
+
 .header{
-    text-align: center;
-    margin-bottom: 30px;
+    text-align:center;
+    background:#003566;
+    color:#fff;
+    padding-bottom:30px;
 }
+
 .header img{
-    width: 100%;
-    max-width: 600px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    width:100%;
+    height:250px;
+    object-fit:cover;
 }
 
-.booking-form{
-    display: grid;
-    grid-gap: 5px;
-}
-.form-group{
-    display: flex;
-    flex-direction: column;
+.header h1{
+    margin-top:20px;
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:1px;
 }
 
-label{
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 18px;
+.header h1 i{
+    color:#ffd60a;
+    margin-right:10px;
 }
-input, select{
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #c4bfc4;
+
+.header p{
+    margin-top:10px;
+    font-size:17px;
+    opacity:.9;
 }
+
+/* ==============================
+        FORM
+============================== */
+
+form{
+    padding:35px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-bottom:22px;
+}
+
+.input-box{
+    display:flex;
+    flex-direction:column;
+}
+
+.input-box label{
+    font-weight:600;
+    margin-bottom:8px;
+    color:#003566;
+}
+
+.input-box input,
+.input-box select{
+
+    padding:13px 15px;
+
+    border:2px solid #d6d6d6;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:16px;
+
+    transition:.3s;
+
+    background:#fafafa;
+}
+
+.input-box input:focus,
+.input-box select:focus{
+
+    border-color:#0f4c81;
+
+    background:#fff;
+
+    box-shadow:0 0 8px rgba(15,76,129,.3);
+}
+
+/* ==============================
+        BUTTON
+============================== */
+
+.book-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#003566;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.book-btn:hover{
+
+    background:#00509d;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(0,80,157,.35);
+}
+
+.book-btn i{
+
+    margin-right:8px;
+}
+
+/* ==============================
+      COMMON BUTTONS
+============================== */
 
 button{
-    background: #2196F3;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
-}
-button:hover{
-    background: #1976D2;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.3s;
 }
 
+button:hover{
+
+    transform:translateY(-2px);
+}
+
+/* ==============================
+      TICKET CONTAINER
+============================== */
+
 .ticket{
-    margin-top: 30px;
-    border: 2px dashed #e3e4e4;
-    padding: 20px;
-    border-radius: 8px;
-    display: none;
+
+    display:none;
+
+    margin:30px;
+
+    background:#fff;
+
+    border-radius:15px;
+
+    border:3px dashed #003566;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
-.ticket h3{
-    color: #ffffff;
-    margin-bottom: 15px;
-    font-size: 25px;
+
+/* ==============================
+      TICKET HEADER
+============================== */
+
+.ticket-header{
+
+    background:#003566;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:18px;
 }
-.ticket-details{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+.ticket-header h2{
+
+    font-size:28px;
+
+    margin-bottom:8px;
 }
-.ticket-details p{
-    margin: 5px 0;
+
+.ticket-header i{
+
+    color:#ffd60a;
+
+    margin-right:10px;
+}
+
+.confirm{
+
+    color:#00ff66;
+
+    font-weight:bold;
+}
+
+/* ==============================
+      ANIMATION
+============================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
+
+
+
+/* ==============================
+      TICKET CONTENT
+============================== */
+
+#ticketContent{
+    padding:30px;
+}
+
+.ticket-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px 30px;
+    margin-top:20px;
+}
+
+.ticket-grid p{
+    background:#f8f9fa;
+    padding:12px 15px;
+    border-left:5px solid #003566;
+    border-radius:8px;
+    font-size:15px;
+    color:#333;
+    word-break:break-word;
+}
+
+.ticket-grid strong{
+    color:#003566;
+}
+
+/* ==============================
+      QR CODE
+============================== */
+
+#qrcode{
+    margin:35px auto 10px;
+    width:160px;
+    min-height:160px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#qrcode img,
+#qrcode canvas{
+    border:6px solid #fff;
+    box-shadow:0 6px 20px rgba(0,0,0,.15);
+}
+
+/* ==============================
+      BUTTONS
+============================== */
+
+.ticket-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:25px;
+    background:#f4f4f4;
+}
+
+.ticket-buttons button{
+
+    background:#003566;
+    color:#fff;
+    padding:14px 25px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.ticket-buttons button:hover{
+
+    background:#00509d;
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+.ticket-buttons button i{
+
+    margin-right:8px;
+}
+
+/* ==============================
+      PDF FRIENDLY
+============================== */
+
+@media print{
+
+    body{
+
+        background:white;
+        padding:0;
+    }
+
+    .container{
+
+        box-shadow:none;
+        border:none;
+    }
+
+    form,
+    .ticket-buttons{
+
+        display:none;
+    }
+
+    .ticket{
+
+        display:block !important;
+        border:none;
+        margin:0;
+        box-shadow:none;
+    }
+
+    #ticketContent{
+
+        padding:15px;
+    }
+}
+
+/* ==============================
+      RESPONSIVE
+============================== */
+
+@media(max-width:900px){
+
+    .row{
+
+        grid-template-columns:1fr;
+    }
+
+    .ticket-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .ticket-buttons{
+
+        flex-direction:column;
+    }
+
+    .ticket-buttons button{
+
+        width:100%;
+    }
+
+    .header img{
+
+        height:180px;
+    }
+
+    .header h1{
+
+        font-size:28px;
+    }
+}
+
+@media(max-width:600px){
+
+    body{
+
+        padding:10px;
+    }
+
+    form{
+
+        padding:20px;
+    }
+
+    .ticket{
+
+        margin:15px;
+    }
+
+    #ticketContent{
+
+        padding:20px;
+    }
+
+    .ticket-header h2{
+
+        font-size:22px;
+    }
+
+    .header h1{
+
+        font-size:24px;
+    }
+
+    .header p{
+
+        font-size:15px;
+    }
+
+    .input-box input,
+    .input-box select{
+
+        font-size:15px;
+    }
+}
+
+/* ==============================
+      SMOOTH EFFECTS
+============================== */
+
+input,
+select,
+button{
+
+    transition:all .3s ease;
+}
+
+.container:hover{
+
+    transform:translateY(-3px);
+    transition:.4s;
+}
+
+/* ==============================
+      SCROLLBAR
+============================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#003566;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e8e8e8;
+}
+
+#ticketContent{
+    width:100%;
+    background:white;
+    padding:20px;
+}
+
+@media print{
+
+    #ticketContent{
+
+        width:100%;
+        margin:0;
+        padding:10px;
+        page-break-inside:avoid;
+    }
+
+    .ticket-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+#passengerContainer{
+
+    margin-top:20px;
+}
+
+.extraPassenger{
+
+    margin-top:25px;
+    padding:20px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:#f8f9fa;
+}
+
+.extraPassenger h3{
+
+    margin-bottom:15px;
+    color:#003566;
 }
