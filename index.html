@@ -1,95 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Railway Ticket Booking</title>
+    <title>Indian Railway Ticket Booking</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- html2pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 </head>
 
 <body>
+
 <div class="container">
 
     <div class="header">
-        <img src="https://images.unsplash.com/photo-1535535112387-56ffe8db21ff?ixlib=rb-4.0.3" alt="Railway Train">
-        <h1>Railway Ticket Booking</h1>
+
+        <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1200"
+            alt="Indian Railway">
+
+        <h1>
+            <i class="fa-solid fa-train"></i>
+            Indian Railway Ticket Booking
+        </h1>
+
+        <p>Book your railway journey in seconds</p>
+
     </div>
 
-    <form class="booking-form" id="bookingForm">
 
-        <div class="form-group">
-            <label for="name">Passenger Name</label>
-            <input type="text" id="name" placeholder="Enter Passenger name" required>
+    <form id="bookingForm">
 
-            <label for="age">Age</label>
-            <input type="number" id="age" placeholder="Enter Passenger Age" required>
+        <div class="row">
+
+            <div class="input-box">
+                <label>Passenger Name</label>
+                <input type="text" id="name" placeholder="Enter Passenger Name" required>
+            </div>
+
+            <div class="input-box">
+                <label>Age</label>
+                <input type="number" id="age" placeholder="Age" required>
+            </div>
+
         </div>
 
-        <div class="form-group">
-            <label for="from">From Station</label>
-            <select id="from" required>
-                <option value="">Select Station</option>
-                <option>Delhi</option>
-                <option>Mumbai</option>
-                <option>Patna</option>
-                <option>Kolkata</option>
-                <option>Bangalore</option>
-                <option>Chennai</option>
-                <option>Hyderabad</option>
-                <option>Jaipur</option>
-                <option>Lucknow</option>
-                <option>Pune</option>
-                <option>Indore</option>
-            </select>
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Gender</label>
+
+                <select id="gender" required>
+
+                    <option value="">Select Gender</option>
+
+                    <option>Male</option>
+
+                    <option>Female</option>
+
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Train</label>
+
+                <select id="train" required>
+
+                    <option value="">Select Train</option>
+
+                    <option value="Rajdhani Express|12301|1450">
+                        Rajdhani Express (12301)
+                    </option>
+
+                    <option value="Shatabdi Express|12001|950">
+                        Shatabdi Express (12001)
+                    </option>
+
+                    <option value="Duronto Express|12213|1200">
+                        Duronto Express (12213)
+                    </option>
+
+                    <option value="Vande Bharat Express|22436|1800">
+                        Vande Bharat Express (22436)
+                    </option>
+
+                </select>
+
+            </div>
+
         </div>
 
-        <div class="form-group">
-            <label for="to">To Station</label>
-            <select id="to" required>
-                <option value="">Select Station</option>
-                <option>Delhi</option>
-                <option>Mumbai</option>
-                <option>Patna</option>
-                <option>Kolkata</option>
-                <option>Bangalore</option>
-                <option>Chennai</option>
-                <option>Hyderabad</option>
-                <option>Jaipur</option>
-                <option>Lucknow</option>
-                <option>Pune</option>
-                <option>Indore</option>
-            </select>
+
+        <div class="row">
+
+            <div class="input-box">
+
+                <label>From Station</label>
+
+                <select id="from" required>
+
+                    <option value="">Select Station</option>
+
+                    <option>Kolkata</option>
+
+                    <option>Delhi</option>
+
+                    <option>Mumbai</option>
+
+                    <option>Bangalore</option>
+
+                    <option>Chennai</option>
+
+                    <option>Hyderabad</option>
+
+                    <option>Patna</option>
+
+                    <option>Lucknow</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>To Station</label>
+
+                <select id="to" required>
+
+                    <option value="">Select Station</option>
+
+                    <option>Kolkata</option>
+
+                    <option>Delhi</option>
+
+                    <option>Mumbai</option>
+
+                    <option>Bangalore</option>
+
+                    <option>Chennai</option>
+
+                    <option>Hyderabad</option>
+
+                    <option>Patna</option>
+
+                    <option>Lucknow</option>
+
+                </select>
+
+            </div>
+
         </div>
 
-        <div class="form-group">
-            <label for="date">Travel Date</label>
-            <input type="date" id="date" required>
+
+        <div class="row">
+
+            <div class="input-box">
+
+                <label>Journey Date</label>
+
+                <input type="date" id="date" required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Class</label>
+
+                <select id="travelClass" required>
+
+                    <option value="">Select Class</option>
+
+                    <option>First AC</option>
+
+                    <option>Second AC</option>
+
+                    <option>Third AC</option>
+
+                    <option>Sleeper</option>
+
+                    <option>Second Sitting</option>
+
+                </select>
+
+            </div>
+
         </div>
 
-        <div class="form-group">
-            <label for="travelClass">Class</label>
-            <select id="travelClass" required>
-                <option value="">Select Class</option>
-                <option>First AC</option>
-                <option>Second AC</option>
-                <option>Third AC</option>
-                <option>Sleeper</option>
-                <option>Second Sitting</option>
-            </select>
-        </div>
 
-        <button type="submit">Book Ticket</button>
+        <div class="input-box">
+    <label>Number of Passengers</label>
+
+    <select id="passengerCount">
+        <option value="1">1 Passenger</option>
+        <option value="2">2 Passengers</option>
+        <option value="3">3 Passengers</option>
+        <option value="4">4 Passengers</option>
+        <option value="5">5 Passengers</option>
+        <option value="6">6 Passengers</option>
+    </select>
+</div>
+
+<div id="passengerContainer"></div>
+         <button type="submit" class="book-btn">
+    <i class="fa-solid fa-ticket"></i>
+    Book Ticket
+</button>
     </form>
 
-    <div class="ticket" id="ticket">
-        <h3>E-Ticket</h3>
-        <div class="ticket-details" id="ticketDetails"></div>
-        <button onclick="downloadTicket()">Download Ticket</button>
+
+    <div id="ticket" class="ticket">
+
+        <div id="ticketContent">
+
+            <div class="ticket-header">
+
+                <h2>
+
+                    <i class="fa-solid fa-train"></i>
+
+                    Indian Railway E-Ticket
+
+                </h2>
+
+                <p>Status : <span class="confirm">CONFIRMED</span></p>
+
+            </div>
+
+
+            <div class="ticket-grid">
+
+                <div id="tPassengers"></div>
+
+                <p><strong>Train :</strong> <span id="tTrain"></span></p>
+
+                <p><strong>Train No :</strong> <span id="tTrainNo"></span></p>
+
+                <p><strong>PNR :</strong> <span id="tPNR"></span></p>
+
+                <p><strong>Ticket No :</strong> <span id="tTicket"></span></p>
+
+                <p><strong>From :</strong> <span id="tFrom"></span></p>
+
+                <p><strong>To :</strong> <span id="tTo"></span></p>
+
+                <p><strong>Date :</strong> <span id="tDate"></span></p>
+
+                <p><strong>Class :</strong> <span id="tClass"></span></p>
+
+                <p><strong>Coach :</strong> <span id="tCoach"></span></p>
+
+                <p><strong>Seat :</strong> <span id="tSeat"></span></p>
+
+                <p><strong>Berth :</strong> <span id="tBerth"></span></p>
+
+                <p><strong>Fare :</strong> ₹<span id="tFare"></span></p>
+
+                <p><strong>Booked On :</strong> <span id="tTime"></span></p>
+
+            </div>
+
+            <div id="qrcode"></div>
+
+        </div>
+        <div class="input-box">
+    <label>Number of Passengers</label>
+    <select id="passengerCount">
+        <option value="1">1 Passenger</option>
+        <option value="2">2 Passengers</option>
+        <option value="3">3 Passengers</option>
+        <option value="4">4 Passengers</option>
+        <option value="5">5 Passengers</option>
+        <option value="6">6 Passengers</option>
+    </select>
+</div>
+
+<div id="passengerContainer"></div>
+        <div class="ticket-buttons">
+
+            <button onclick="downloadTicket()">
+
+                <i class="fa-solid fa-download"></i>
+
+                Download PDF
+
+            </button>
+
+            <button onclick="printTicket()">
+
+                <i class="fa-solid fa-print"></i>
+
+                Print Ticket
+
+            </button>
+
+        </div>
+
     </div>
 
 </div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
-<!-- ✅ ONLY ONE SCRIPT, AT THE BOTTOM -->
 <script src="script.js"></script>
+
 </body>
 </html>
